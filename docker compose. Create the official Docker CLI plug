@@ -1,0 +1,11 @@
+# 1. Create the official Docker CLI plugins directory
+sudo mkdir -p /usr/local/lib/docker/cli-plugins
+
+# 2. Download the absolute latest release dynamically
+sudo curl -SL "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose
+
+# 3. Grant execution permissions to the plugin
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+# 4. Verify the installation (Notice the space instead of a hyphen!)
+docker compose version
